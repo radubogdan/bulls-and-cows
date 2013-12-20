@@ -1,0 +1,11 @@
+{
+  "name": "Bulls and Cows",
+  "description": "mastermind with numbers",
+  "launch_path": "/index.html",
+  "version": "1.0",
+  "developer": {
+    "name": "Radu-Bogdan Croitoru",
+    "url": "http://dotix.usr.sh"
+  },
+  "default_locale": "en"
+}

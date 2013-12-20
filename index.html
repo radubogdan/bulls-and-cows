@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mastermind Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is mastermind with numbers">
+    <meta name="author" content="Radu-Bogdan Croitoru">
+
+    <link href="css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <link href="shared/style/headers.css" rel="stylesheet" type="text/css">
+    <link href="shared/style/buttons.css" rel="stylesheet" type="text/css">
+    <link href="shared/style/status.css" rel="stylesheet" type="text/css">
+    <link href="shared/style/input_areas.css" rel="stylesheet" type="text/css">
+    <link href="shared/style_unstable/lists.css" rel="stylesheet" type="text/css">
+    
+  </head>
+  <body>
+    <section role="region">
+      <header id="title">
+        <button id="back"><span class="icon icon-back">back</span></button>
+        <h1>Bulls and Cows</h1>
+      </header>
+    </section>
+
+    <div id="mode_selector">
+      <button id="go_game">Play</button>
+      <button id="go_settings">Settings</button>
+      <button id="go_highscores">Highscores</button>
+      <button id="go_about">About</button>
+    </div>
+
+    <div id="mastermind-game">
+      <section data-type="list" id="output">
+        <header>Guess Bulls Cows</header>
+        <ol class="gueses"></ol>
+      </section>
+      <div id="input">
+        <form role="search" class="bottom">
+          <button type="submit" id="send">Send</button>
+          <p>
+            <textarea disabled="true" name="guess" id="req" required=""></textarea>
+          </p>
+          <input type="hidden" name="game_token" id="game_token" value="null" />
+          <input type="hidden" name="name" id="params_name" value="" />
+        </form>
+
+        <button class="digit" value="1" disabled="disabled">1</button>
+        <button class="digit" value="2" disabled="disabled">2</button>
+        <button class="digit" value="3" disabled="disabled">3</button>
+        <button class="digit" value="4" disabled="disabled">4</button>
+        <button class="digit" value="5" disabled="disabled">5</button>
+        <button class="digit" value="6" disabled="disabled">6</button>
+        <button class="digit" value="7" disabled="disabled">7</button>
+        <button class="digit" value="8" disabled="disabled">8</button>
+        <button class="digit" value="9" disabled="disabled">9</button>
+        <button class="digit zero" value="0" disabled="disabled">0</button>
+        <button class="clear" value="clear" disabled="disabled">Clear</button>
+        <button class="start" value="start">Start</button>
+        <button class="reset" value="reset" disabled="disabled">Reset</button>
+      </div>
+    </div>
+    <div id="settings">
+      <p class="description">
+        Please enter your name:
+      </p>
+      <textarea id="player_name"></textarea>
+    </div>
+    <div id="highscores">
+      <section data-type="list" id="output">
+        <header>Highscores</header>
+        <ol class="scores"></ol>
+    </div>
+    <div id="about">
+      <h2>About</h2>
+      <p>
+        Bulls and cows is an old code-breaking mind or paper and pencil game for two or more players. It's a lot like the commercial game
+        Mastermind but you'll play with digits instead of pegs. For this implementation, you have to guess the computer 4 digit number. 
+        The number has always unique digits and can't start with 0.<br />
+        <br />
+        Buttons:<br />
+        Start: Start the game <br />
+        Clear: Clear the guess field <br />
+        Reset: Clear the guess field and clean the table <br />
+      </p>
+    </div>
+
+    <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="js/bullsandcows.js" type="text/javascript"></script>
+  </body>
+</html>

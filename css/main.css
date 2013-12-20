@@ -1,0 +1,88 @@
+body, html {
+    background-color: #eee;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+    font-size: 10px;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+section[role="region"] {
+    padding-bottom: 1rem;
+}
+
+#back { display: none; }
+
+#mode_selector { margin-top: 5rem; }
+
+#mode_selector > button { width: 95% !important; }
+
+#mastermind-game, #settings, #highscores, #about { display: none; }
+
+form.bottom[role="search"] {
+    margin: 0 auto 1em;
+    width: 94%;
+}
+
+.digit {
+    width: 18%;
+    height: 10%;
+}
+
+#input {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -160px;
+    margin-right: -160px;
+}
+
+#output {
+    height: 207px;
+    overflow: auto;
+}
+
+#output > header {
+  word-spacing: 15px;
+}
+
+.clear { width: 46%; }
+
+.reset { width: 23%; }
+
+.start { width: 23%; }
+
+ol {
+    margin: 0 auto;
+    font-size: 16px;
+    padding-left: 0;
+}
+
+ol > li {
+    width: 94%;
+    height: 2.30rem !important;
+}
+[data-type="list"] li {
+  margin-left: -9px !important;
+  word-spacing: 46px;
+}
+
+#player_name {
+    width: 94%;
+    margin: 0 auto;
+    height: 10%;
+}
+
+.description { font-size: 14px; }
+
+#about {
+  margin: 10px 10px;
+  font-size: 14px;
+}
+
+#about > h2 { 
+  color: #FA7529;
+  font-size: 20px;
+}
