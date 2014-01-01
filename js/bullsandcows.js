@@ -3,6 +3,7 @@
     function menu_nav(evt) {
         $("#back").show();
         $("#mode_selector").hide();
+        $("#footer").hide();
         var go = evt.target.id;
 
         switch(go) {
@@ -30,6 +31,7 @@
                 $("#highscores").hide();
                 $("#about").hide();
                 $("#mode_selector").show();
+                $("#footer").show();
                 break;
         } 
     }
@@ -110,4 +112,22 @@
         }
         return false;
     });
+})();
+
+(function(){
+    function install(evt) {
+        evt.preventDefault();
+        var manifestUrl = 'http://dotix.usr.sh/bulls/manifest.webapp';
+        var req = navigator.mozApps.installPackage(manifestUrl);
+
+        req.onsuccess = function() {
+            alert(this.result.origin);
+        };
+
+        req.onerror = function() {
+            alert(this.error.name);
+        };
+    }
+
+    $('#install').on('click', install);
 })();

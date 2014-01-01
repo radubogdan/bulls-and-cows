@@ -12,6 +12,16 @@ section[role="region"] {
     padding-bottom: 1rem;
 }
 
+#footer {
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: #bbb;
+}
+
+#footer a {
+  color: white;
+}
+
 #back { display: none; }
 
 #mode_selector { margin-top: 5rem; }
@@ -64,6 +74,7 @@ ol > li {
     width: 94%;
     height: 2.30rem !important;
 }
+
 [data-type="list"] li {
   margin-left: -9px !important;
   word-spacing: 46px;
