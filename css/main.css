@@ -1,15 +1,27 @@
 body, html {
-    background-color: #eee;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    margin: 0 auto;
-    font-size: 10px;
-    height: 100%;
-    overflow-x: hidden;
+  background-color: #eee;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  font-size: 10px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+section[role="region"] > header:first-child {
+  background: url("/shared/style/headers/images/ui/dark/header.png") repeat-x scroll 0 0 / auto 100% rgba(0, 0, 0, 0) !important;
 }
 
 section[role="region"] {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+section[role="region"] > header:first-child > button, section[role="region"] > header:first-child > a {
+  background: url("/shared/style/headers/images/ui/dark/separator-large.png") no-repeat scroll 2rem top / 0.2rem 5rem rgba(0, 0, 0, 0) !important;
+}
+
+section[role="region"] > header:first-child > button .icon:after, section[role="region"] > header:first-child > a .icon:after {
+  background: none !important;
 }
 
 #footer {
@@ -80,6 +92,12 @@ ol > li {
   word-spacing: 46px;
 }
 
+[data-type="list"] header {
+  color: #20292A !important;
+  border-bottom: 0.1rem solid #20292A !important;
+  border-bottom: 0.1rem solid #20292A !important;
+}
+
 #player_name {
     width: 94%;
     margin: 0 auto;
@@ -94,6 +112,6 @@ ol > li {
 }
 
 #about > h2 { 
-  color: #FA7529;
+  color: #20292A;
   font-size: 20px;
 }
