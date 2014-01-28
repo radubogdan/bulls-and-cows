@@ -4,6 +4,7 @@
         $("#back").show();
         $("#mode_selector").hide();
         $("#footer").hide();
+
         var go = evt.target.id;
 
         switch(go) {
@@ -52,6 +53,7 @@
 
     var reset = function(){
         clear();
+
         $('.zero').attr("disabled", "disabled"); 
         $('.gueses').empty();
     };
@@ -66,12 +68,16 @@
 
     var scores = function() {
         var mastermindApi = 'http://dotix.usr.sh/api/games/show';
+        var scores_container = $('.scores');
+
         $.getJSON(mastermindApi, function(data) {
             var dude = '';
             $.each(data, function(i, score){
                 dude += '<li>' + " " + score.game.name + " " + score.game.tries +'</li>';
             });
-            $('.scores').append(dude);
+            
+            scores_container.empty();
+            scores_container.append(dude);
         });
     };
 
@@ -82,6 +88,7 @@
     $(".digit").on("click", function() { 
         var digit = $(this);
         var req = $('#req');
+
         $('.zero').removeAttr("disabled"); 
 
         if (req.val().length < 4) {
@@ -96,9 +103,10 @@
         var mastermindApi = 'http://dotix.usr.sh/api/games/';
         var guess = $('#req').val();
         var token = $('#game_token').val();
+        var player_name = $('#player_name').val();
 
-        if (guess.length === 4){
-            $.post(mastermindApi, { guess : guess, game_token : token }).done(function(data) {
+        if (guess.length === 4) {
+            $.post(mastermindApi, { guess : guess, game_token : token, name : player_name }).done(function(data) {
                 var format_result = guess + " " + data.mastermind.bulls + " " + data.mastermind.cows;
 
                 $('.gueses').append("<li>" + format_result + "</li>");
