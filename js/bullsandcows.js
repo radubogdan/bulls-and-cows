@@ -71,15 +71,20 @@
         var scores_container = $('.scores');
 
         $.getJSON(mastermindApi, function(data) {
+            var username = '';
             var dude = '';
+            
             $.each(data, function(i, score){
-                dude += '<li>' + " " + score.game.name + " " + score.game.tries +'</li>';
+                score.game.name === '' ? username = 'Anonymous' : username = score.game.name;
+                dude += '<li>' + " " + username + " " + score.game.tries +'</li>';
             });
             
             scores_container.empty();
             scores_container.append(dude);
         });
     };
+
+    $("#refresh_highscore").on('click', scores);
 
     $(".clear").on("click", function(){ clear(); });
     $('.reset').on("click", function(){ reset(); });
